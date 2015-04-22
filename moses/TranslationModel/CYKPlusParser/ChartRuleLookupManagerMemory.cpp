@@ -80,6 +80,9 @@ void ChartRuleLookupManagerMemory::GetChartRuleCollection(
     GetNonTerminalExtension(&rootNode, startPos);
   }
 
+  if (startPos == 0 && range.GetEndPos() > 0 && range.GetEndPos() < GetParser().GetSize()-2)
+	  return;
+
   // copy temporarily stored rules to out collection
   CompletedRuleCollection & rules = m_completedRules[absEndPos];
   for (vector<CompletedRule*>::const_iterator iter = rules.begin(); iter != rules.end(); ++iter) {

@@ -277,8 +277,11 @@ int TreeInput::Read(std::istream& in,const std::vector<FactorType>& factorOrder)
   for (size_t startPos = 0; startPos < sourceSize; ++startPos) {
     for (size_t endPos = startPos; endPos < sourceSize; ++endPos) {
       NonTerminalSet &list = GetLabelSet(startPos, endPos);
-      if (list.size() == 0 || !staticData.GetDefaultNonTermOnlyForEmptyRange()) {
+      if (list.size() != 0 && !staticData.GetDefaultNonTermOnlyForEmptyRange()) {
         AddChartLabel(startPos, endPos, staticData.GetInputDefaultNonTerminal(), factorOrder);
+      }
+      if  (startPos ==0 && endPos >= sourceSize-2) {
+    	  AddChartLabel(startPos, endPos, staticData.GetInputDefaultNonTerminal(), factorOrder);
       }
     }
   }

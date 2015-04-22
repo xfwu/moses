@@ -12,7 +12,8 @@ use utf8;
 $url = "http://localhost:8080/RPC2";
 $proxy = XMLRPC::Lite->proxy($url);
 
-$text = "il a souhaité que la présidence trace à nice le chemin pour l' avenir .";
+#$text = "il a souhaité que la présidence trace à nice le chemin pour l' avenir .";
+$text = "<tree label=\"TOP\"><tree label=\"OS\">overhead</tree> <tree label=\"NS\">oxygen</tree> <tree label=\"NS\">masks</tree> in the <tree label=\"NS\">cabin <tree label=\"NS\">section</tree></tree> <tree label=\"OS\">had dropped into place .</tree></tree>";
 
 # Work-around for XMLRPC::Lite bug
 $encoded = SOAP::Data->type(string => Encode::encode("utf8",$text));
