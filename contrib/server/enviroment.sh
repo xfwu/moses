@@ -1,0 +1,5 @@
+export PREAUTHOR_HOME_DIR=$PWD
+export PREAUTHOR_WS_CONFIG="${PREAUTHOR_HOME_DIR}/ws.cfg"
+export DB_CONFIG='${HOME_DIR}/'
+export LT_CONFIG='${HOME_DIR}/'
+export LC_ALL=en_US.utf8
