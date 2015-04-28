@@ -655,10 +655,17 @@ void ChartManager::OutputTranslationOption(std::ostream &out,
   out << "Trans Opt " << translationId
       << " " << hypo->GetCurrSourceRange()
       << ": ";
+  cout  << "Trans Opt " << translationId
+	      << " " << hypo->GetCurrSourceRange()
+	      << ": ";
   WriteApplicationContext(out, applicationContext);
   out << ": " << hypo->GetCurrTargetPhrase().GetTargetLHS()
       << "->" << hypo->GetCurrTargetPhrase()
       << " " << hypo->GetTotalScore() << hypo->GetScoreBreakdown();
+  cout << ": " << hypo->GetCurrTargetPhrase().GetTargetLHS()
+    	      << "->" << hypo->GetCurrTargetPhrase()
+    	      << " " << hypo->GetTotalScore() << hypo->GetScoreBreakdown();
+  cout <<endl;
 }
 
 // Given a hypothesis and sentence, reconstructs the 'application context' --
