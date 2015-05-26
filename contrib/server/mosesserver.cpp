@@ -319,7 +319,9 @@ public:
         if (addGraphInfo) {
           // const size_t translationId = tinput.GetTranslationId();
           std::ostringstream sgstream;
-          manager.OutputSearchGraphMoses(sgstream);
+          //manager.OutputSearchGraphMoses(sgstream);
+          OutputCollector *oc = new OutputCollector(&sgstream);
+          manager.OutputDetailedTranslationReport(oc);
           m_retData.insert(pair<string, xmlrpc_c::value>("sg", xmlrpc_c::value_string(sgstream.str())));
         }
     } else {
